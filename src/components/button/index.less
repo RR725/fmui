@@ -1,0 +1,62 @@
+@percent:72/160/10.125;
+.fmui-btn-small-con{
+    font-size:14rem*@percent;
+    width:58rem*@percent;
+    height:24rem*@percent; 
+    line-height: 24rem*@percent; 
+    border-radius:24rem*@percent;
+}
+.fmui-btn-normal-con{
+    font-size: 16rem*@percent;
+    height:38rem*@percent; 
+    line-height: 38rem*@percent; 
+    border-radius:38rem*@percent;
+}
+.fmui-btn-con{
+    border-width:1px;
+    border-style:solid; 
+}
+.fmui-btn-inverse-con{
+    color:#fff; 
+}
+.fmui-btn,.fmui-btn-inverse{ 
+    display: inline-block; 
+    text-align: center;
+}
+.fmui-btn-small{ 
+    .fmui-btn-con;  
+    .fmui-btn-small-con;
+}
+.fmui-btn-normal{ 
+    .fmui-btn-con; 
+    width:132rem*@percent; 
+    .fmui-btn-normal-con;  
+}
+.fmui-btn-large{ 
+    .fmui-btn-con;  
+    .fmui-btn-normal-con;  
+    width:240rem*@percent; 
+}
+
+.fmui-btn-inverse-small{
+    .fmui-btn-inverse-con;
+    .fmui-btn-small-con; 
+} 
+.fmui-btn-inverse-normal{ 
+    .fmui-btn-inverse-con; 
+    width:132rem*@percent; 
+    .fmui-btn-normal-con;
+} 
+.fmui-btn-inverse-large{  
+    .fmui-btn-inverse-con;  
+    .fmui-btn-normal-con; 
+    width:240rem*@percent;
+} 
+
+.fmui-btn-two{
+    text-align: center;
+    font-size: 0;
+}
+.fmui-btn-two .fmui-btn-inverse:last-child{
+    margin-left:22rem*@percent;
+}

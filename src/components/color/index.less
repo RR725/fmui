@@ -1,0 +1,139 @@
+//blue
+@blueColor:#198ded;   //主题色
+@blueColorRgbRed:25;
+@blueColorRgbBlue:141;
+@blueColorRgbGreen:237;
+@blueColorStart:#40b3e8;  //渐变起点
+@blueColorEnd:#198ded;  //渐变终点
+@blueColorHighlight:#269cfc;   //高亮
+@blueColorAcitve:#0a73c9;   //点击色
+.set-color(blue,@blueColor,@blueColorStart,@blueColorEnd,@blueColorAcitve,@blueColorHighlight,@blueColorRgbRed,@blueColorRgbBlue,@blueColorRgbGreen);
+
+
+
+//limegreen
+@limegreenColor:#3bc06b;   //主题色
+@limegreenColorRgbRed:59;
+@limegreenColorRgbBlue:192;
+@limegreenColorRgbGreen:107;
+@limegreenColorStart:#7bcf44;  //渐变起点
+@limegreenColorEnd:#37b44f;  //渐变终点
+@limegreenColorHighlight:#58cc82;   //高亮
+@limegreenColorAcitve:#2aa155;   //点击色
+.set-color(limegreen,@limegreenColor,@limegreenColorStart,@limegreenColorEnd,@limegreenColorAcitve,@limegreenColorHighlight,@limegreenColorRgbRed,@limegreenColorRgbBlue,@limegreenColorRgbGreen);
+
+
+//seagreen
+@seagreenColor:#04c0cf;   //主题色
+@seagreenColorRgbRed:4;
+@seagreenColorRgbBlue:192;
+@seagreenColorRgbGreen:107;
+@seagreenColorStart:#45d3c4;  //渐变起点
+@seagreenColorEnd:#21c0ce;  //渐变终点
+@seagreenColorHighlight:#2bcdd9;   //高亮
+@seagreenColorAcitve:#009fad;   //点击色
+.set-color(seagreen,@seagreenColor,@seagreenColorStart,@seagreenColorEnd,@seagreenColorAcitve,@seagreenColorHighlight,@seagreenColorRgbRed,@seagreenColorRgbBlue,@seagreenColorRgbGreen);
+
+
+
+//gray
+@grayColor:#7E97AC;   //主题色
+@grayColorRgbRed:126;
+@grayColorRgbBlue:151;
+@grayColorRgbGreen:172;
+@grayColorStart:#9CB5CB;  //渐变起点
+@grayColorEnd:#849DB2;  //渐变终点
+@grayColorHighlight:#8ca4ba;   //高亮
+@grayColorAcitve:#687e8f;   //点击色
+.set-color(gray,@grayColor,@grayColorStart,@grayColorEnd,@grayColorAcitve,@grayColorHighlight,@grayColorRgbRed,@grayColorRgbBlue,@grayColorRgbGreen);
+
+//crimson
+@crimsonColor:#d33a2a;   //主题色
+@crimsonColorRgbRed:211;
+@crimsonColorRgbBlue:58;
+@crimsonColorRgbGreen:42;
+@crimsonColorStart:#f54e23;  //渐变起点
+@crimsonColorEnd:#e02218;  //渐变终点
+@crimsonColorHighlight:#db574b;   //高亮
+@crimsonColorAcitve:#b83125;   //点击色
+.set-color(crimson,@crimsonColor,@crimsonColorStart,@crimsonColorEnd,@crimsonColorAcitve,@crimsonColorHighlight,@crimsonColorRgbRed,@crimsonColorRgbBlue,@crimsonColorRgbGreen);
+
+
+//firebrick
+@firebrickColor:#f12528;   //主题色
+@firebrickColorRgbRed:241;
+@firebrickColorRgbBlue:37;
+@firebrickColorRgbGreen:40;
+@firebrickColorStart:#ff4733;  //渐变起点
+@firebrickColorEnd:#eb1313;  //渐变终点
+@firebrickColorHighlight:#fc474a;   //高亮
+@firebrickColorAcitve:#cf2124;   //点击色
+.set-color(firebrick,@firebrickColor,@firebrickColorStart,@firebrickColorEnd,@firebrickColorAcitve,@firebrickColorHighlight,@firebrickColorRgbRed,@firebrickColorRgbBlue,@firebrickColorRgbGreen);
+
+
+//tomato
+@tomatoColor:#fc5b23;   //主题色
+@tomatoColorRgbRed:252;
+@tomatoColorRgbBlue:91;
+@tomatoColorRgbGreen:35;
+@tomatoColorStart:#fd8b3f;  //渐变起点
+@tomatoColorEnd:#fc5b23;  //渐变终点
+@tomatoColorHighlight:#fc723f;   //高亮
+@tomatoColorAcitve:#db4914;   //点击色
+.set-color(tomato,@tomatoColor,@tomatoColorStart,@tomatoColorEnd,@tomatoColorAcitve,@tomatoColorHighlight,@tomatoColorRgbRed,@tomatoColorRgbBlue,@tomatoColorRgbGreen);
+
+
+//coral
+@coralColor:#ffbe26;   //主题色
+@coralColorRgbRed:255;
+@coralColorRgbBlue:190;
+@coralColorRgbGreen:38;
+@coralStart:#fecd45;  //渐变起点
+@coralColorEnd:#fdba2c;  //渐变终点
+@coralColorHighlight:#ffcd45;   //高亮
+@coralColorAcitve:#c99014;   //点击色
+.set-color(coral,@coralColor,@coralStart,@coralColorEnd,@coralColorAcitve,@coralColorHighlight,@coralColorRgbRed,@coralColorRgbBlue,@coralColorRgbGreen);
+
+
+
+
+
+
+.bgcolor( @Color){
+    background:  @Color;
+}
+.boxshadow(@Color){
+    box-shadow: 3px 3px 0 @Color;
+}
+.bordercolor(@Color){
+    border-color:@Color; color:@Color;
+}
+
+.set-color(@type,@color,@colorStart,@colorEnd,@colorActive,@colorHighlight,@colorRgbRed,@colorRgbBlue,@colorRgbGreen) {
+    .fmui-linear-@{type}{//背景色
+        .bgcolor(@color)
+    }
+    .fmui-linear-@{type}:active{//背景色点击
+        .bgcolor(@color)
+    }
+    
+    .fmui-radio-@{type}:after{
+        .boxshadow(@color)
+    }
+    .fmui-radio-@{type}-after:after{
+        .bgcolor(@color)
+    }
+    .fmui-theme-@{type}{color:@color;}//主题色
+    .fmui-theme-@{type}:active{color:@colorActive;}//主题色点击
+    .fmui-star-@{type} span{ color:@color; }
+    .fmui-btn-@{type}{
+        .bordercolor(@color)
+    }
+    .fmui-loading-@{type} .fmui-loading-circle{
+        background:rgba(@colorRgbRed,@colorRgbBlue,@colorRgbGreen, 0.2);
+    }
+    .fmui-loading-@{type} .fmui-loading-anim{
+        background: none repeat scroll 0 0 @color;
+    }
+}
+

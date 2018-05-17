@@ -1,0 +1,32 @@
+{
+  "name": "fmui",
+  "version": "1.1.0",
+  "description": "mobile style ui",
+  "main": "./lib/fmui.css",
+  "scripts": {
+    "build": "node build.js & fis3 release prod -d ./",
+    "build-dev": "node build.js & fis3 release -w",
+    "start": "fis3 server start -p 8094",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RR725/fmui.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.22.0",
+    "commander": "^2.9.0",
+    "fis3-parser-less-2.x": "^0.1.4",
+    "fis3-postpackager-loader": "^2.1.3",
+    "graceful-fs": "^4.1.8"
+  },
+  "keywords": [
+    "fmui"
+  ],
+  "author": "RR725",
+  "license": "MIT"
+}
+

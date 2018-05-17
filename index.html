@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='/fmui/fmui.css' rel='stylesheet' />
+	<link href='/src/www/highlight/highlight.min.css' rel='stylesheet' />
+	<link href='/src/www/highlight/highlight.skin.css' rel='stylesheet' />
+	<link href='/src/www/home.less' rel='stylesheet' />
+
+</head>
+
+<body>
+
+	<div class="header">
+		<nav class="navbar">
+			<div class="nav-content">
+				<div class="logo" style="cursor: pointer">
+					
+					<span class="version">FMUI</span>
+					
+				</div>
+				<ul class="nav-ul">
+					<li class="index active"><a href="/fmui">首页</a></li>
+					<li class="index"><a href="/fmui/demo.html">例子</a></li>
+					<li class="reference">
+						<a target="_blank" href="https://github.com/RR725/fmui/tree/master">
+							<svg aria-hidden="true" class="octicon octicon-mark-github" height="28" version="1.1" style="fill:#fff;margin-top: 30px;float:left"
+								viewBox="0 0 16 16" width="28">
+								<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+							</svg>
+							<span style="margin-left: 4px;">源码</span>
+						</a>
+					</li>
+
+					<li class="index"><a download href="/fmui/fmui.css">下载CSS</a></li>
+				</ul>
+
+				
+			</div>
+		</nav>
+	</div>
+	<div class="wrap">
+		<slide id="sidebar" class="sidebar"><ul><li data-type="button">按钮</li><li data-type="checked">勾选</li><li data-type="color">颜色</li><li data-type="imagebg">背景图</li><li data-type="layout">布局</li><li data-type="list">列表</li><li data-type="loading">加载中</li><li data-type="star">星级评分</li><li data-type="switch">开关</li></ul></slide>
+		<div class="content">
+			<div class="show_text" id="showText"></div>
+			<div class="show_code">
+				<h3>代码片段</h3>
+				<pre><code class="html" id="showCode"></code></pre>
+			</div>
+			<div class="show_demo_wrap">
+				
+				<div class="show_demo">
+					<div class="show_demo_top">
+						<div class="show_demo_btm" id="showDemo"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="template">
+<script type="text/x-jquery-tmpl" id="buttonTemplate">
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">按钮-普通</div>
+		<div class="fmui-btn fmui-btn-small fmui-btn-blue">打开</div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">按钮-反色</div>
+		<div class="fmui-btn-inverse fmui-btn-inverse-small fmui-linear-blue">安装</div>
+	</div>
+
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col">
+			<div class="fmui-btn-two example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-normal fmui-linear-gray">取消订单</div>
+				<div class=" fmui-btn-inverse fmui-btn-inverse-normal fmui-linear-blue">提交订单</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col">
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-blue">开始</div>
+			</div>
+		</div>
+	</div>
+
+</script>
+
+<script type="text/x-jquery-tmpl" id="checkedTemplate">
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="fmui-tit">多选-选中状态</div>
+			<div class="fmui-desc">这是多选</div>
+		</div>
+		<div class="fmui-checked fmui-linear-blue"></div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">多选-选中状态-禁用</div>
+		<div class="fmui-checked  fmui-linear-blue fmui-disabled"></div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">多选-未选状态</div>
+		<div class="fmui-checked fmui-checked-un"></div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">单选-选中状态</div>
+		<div class="fmui-radio"></div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">单选-选中状态</div>
+		<div class="fmui-radio-radius  fmui-radio-blue-after"></div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="colorTemplate">
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col fmui-theme-blue">主题色-blue</div>
+		<div class="fmui-flex-col fmui-theme-limegreen">主题色-limegreen</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col fmui-theme-seagreen">主题色-seagreen</div>
+		<div class="fmui-flex-col fmui-theme-gray">主题色-gray</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col fmui-theme-crimson">主题色-crimson</div>
+		<div class="fmui-flex-col fmui-theme-firebrick">主题色-firebrick</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col fmui-theme-tomato">主题色-tomato</div>
+		<div class="fmui-flex-col fmui-theme-coral">主题色-coral</div>
+	</div>
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col">
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-blue">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-limegreen">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-seagreen">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-gray">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-crimson">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-firebrick">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-tomato">开始</div>
+			</div>
+			<div class="example-button">
+				<div class="  fmui-btn-inverse fmui-btn-inverse-large fmui-linear-coral">开始</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="imagebgTemplate">
+	<div class="fmui-imagebg example-imagebg1" style="background-image:url(http://v.dfs.meizu.com/group1/M0A/7B/7F/CgOUc1ZAAWCAMCqkAAGnG7vVNAs048.jpg);"></div>
+
+	<div class="fmui-imagebg example-imagebg2" style="background-image:url(http://v.dfs.meizu.com/group1/M0A/7B/7F/CgOUc1ZAAWCAMCqkAAGnG7vVNAs048.jpg);"></div>
+	
+	<div class="fmui-imagebg example-imagebg3" style="background-image:url(http://v.dfs.meizu.com/group1/M0A/7B/7F/CgOUc1ZAAWCAMCqkAAGnG7vVNAs048.jpg);"></div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="layoutTemplate">
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="example-layout">一列</div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="example-layout">二列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">二列</div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="example-layout">三列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">三列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">三列</div>
+		</div>
+	</div>
+	
+	<div class="fmui-flex-row bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="example-layout">四列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">四列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">四列</div>
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="example-layout">四列</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="listTemplate">
+	<div class="fmui-flex-row fmui-list-lf fmui-list-rownum1 bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="fmui-tit">列表标题</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="fmui-tit">列表标题</div>
+			<div class="fmui-desc">列表描述</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="fmui-tit">列表标题</div>
+			<div class="fmui-desc fmui-text-line2">辅助信息</div>
+			<div class="fmui-info">段落描述</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">
+			<div class="fmui-tit">列表标题</div>
+			<div class="fmui-desc fmui-text-line2">我和一个朋友现在在外面吃饭，你如果方便的话可以过来一起啊，我给你共享位置哦。</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic  fmui-list-rownum1 fmui-list-lf ">
+		<img class="fmui-icon-faceimg" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="40" height="40" />
+		<div class="fmui-flex-col ">
+			<div class="fmui-flex-row  bdr_bottom">
+				<div class="fmui-tit ">列表标题</div>
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-lf ">
+		<div class=" fmui-icon-top">
+			<img class="fmui-icon-faceimg" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="40" height="40" />
+		</div>
+		<div class="fmui-flex-col">
+			<div class="fmui-flex-row fmui-list-tb bdr_bottom">
+				<div class="fmui-flex-col ">
+					<div class="fmui-tit ">列表标题</div>
+					<div class="fmui-desc fmui-text-line2">辅助信息</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-lf ">
+		<div class="fmui-icon-top">
+			<img class="fmui-icon-faceimg" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="40" height="40" />
+		</div>
+		<div class="fmui-flex-col ">
+			<div class="fmui-flex-row fmui-list-tb bdr_bottom">
+				<div class="fmui-flex-col ">
+					<div class="fmui-tit ">列表标题</div>
+					<div class="fmui-desc fmui-text-line2">辅助信息</div>
+					<div class="fmui-info fmui-text-line2">段落描述</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">超链接</div>
+		<a href="javascript:;" class="fmui-theme-blue">点击链接</a>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">进入下一级</div>
+		<div class="fmui-icon"><i class="fmui-icon-next"></i></div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">展开列表</div>
+		<div class="fmui-icon"><i class="fmui-icon-unfold"></i></div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">删除列表</div>
+		<div class="fmui-del"></div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-rownum1 fmui-list-lf ">
+		<img class="fmui-icon-small" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="32" height="32" />
+		<div class="fmui-flex-col">
+			<div class="fmui-flex-row  bdr_bottom">
+				<div class="fmui-tit ">列表标题</div>
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-lf ">
+		<img class="fmui-icon-small" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="32" height="32" />
+		<div class="fmui-flex-col">
+			<div class="fmui-flex-row fmui-list-tb bdr_bottom">
+				<div class="fmui-flex-col ">
+					<div class="fmui-tit ">列表标题</div>
+					<div class="fmui-desc fmui-text-line2">辅助信息</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-lf ">
+		<img class="fmui-icon-normal" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="45" height="45" />
+		<div class="fmui-flex-col">
+			<div class="fmui-flex-row fmui-list-tb bdr_bottom">
+				<div class="fmui-flex-col ">
+					<div class="fmui-tit ">列表标题</div>
+					<div class="fmui-desc fmui-text-line2">辅助信息</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-lf ">
+		<img class="fmui-icon-large" src="http://i3.res.meizu.com/fileserver/app_icon/6898/f866344ead17456b9d4461c6b2528588.png" width="64" height="64" />
+		<div class="fmui-flex-col ">
+			<div class="fmui-flex-row fmui-list-tb bdr_bottom">
+				<div class="fmui-flex-col ">
+					<div class="fmui-tit ">列表标题</div>
+					<div class="fmui-desc fmui-text-line2">辅助信息</div>
+					<div class="fmui-info fmui-text-line2">段落描述</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="loadingTemplate">
+	<div class="fmui-loading fmui-loading-blue">
+		<span class="fmui-loading-circle ">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-limegreen">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-seagreen">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-gray">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-crimson">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-firebrick">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-tomato">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+	<div class="fmui-loading fmui-loading-coral">
+		<span class="fmui-loading-circle">
+			<span class="fmui-loading-right"><span class="fmui-loading-anim"></span></span>
+		</span>
+		<div>正在加载</div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="starTemplate">
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">默认黄色</div>
+		<div class="fmui-star ">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+			<span class="fmui-star-text">8.3<span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col">默认黄色</div>
+		<div class="fmui-star  fmui-star-large">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col">自定义蓝色</div>
+		<div class="fmui-star fmui-star-blue  fmui-star-large">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">特殊情况</div>
+		<div class="fmui-star-black">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+			<span class="fmui-star-text">8.3<span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">特殊情况</div>
+		<div class="fmui-star-black  fmui-star-large">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom" style="background:#000;">
+		<div class="fmui-flex-col ">特殊情况-黑底</div>
+		<div class="fmui-star-white ">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+			<span class="fmui-star-text">8.3<span>
+		</div>
+	</div>
+	<div class="fmui-flex-row fmui-aic fmui-list-pd bdr_bottom" style="background:#000;">
+		<div class="fmui-flex-col ">特殊情况-黑底</div>
+		<div class="fmui-star-white  fmui-star-large">
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span>★</span>
+			<span class="fmui-star-gray">★</span>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="switchTemplate">
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">开关-打开状态-tomato</div>
+		<div class="fmui-switch  fmui-switch-checked fmui-linear-tomato">
+			<div class="fmui-switch-inner"></div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">开关-打开状态-blue</div>
+		<div class="fmui-switch  fmui-switch-checked fmui-linear-blue">
+			<div class="fmui-switch-inner"></div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">开关-禁用-blue</div>
+		<div class="fmui-switch  fmui-switch-checked fmui-linear-blue fmui-disabled">
+			<div class="fmui-switch-inner"></div>
+		</div>
+	</div>
+
+	<div class="fmui-flex-row fmui-list-pd bdr_bottom">
+		<div class="fmui-flex-col ">开关-关闭状态</div>
+		<div class="fmui-switch">
+			<div class="fmui-switch-inner"></div>
+		</div>
+	</div>
+</script>
+</div>
+
+	<script src="/src/www/jquery.min.js"></script>
+	<script src="/src/www/jquery.tmpl.min.js"></script>
+	<script src="/src/www/highlight/highlight.min.js"></script>
+	<script src="/src/www/home.js"></script>
+
+
+</body>
+
+</html>
