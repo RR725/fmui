@@ -20,4 +20,5 @@ $ npm install fmui
 
 引入fmui.css，HTML结构可以通过下面的传送门获取，
 CommonJS规范和ES6的项目可以require和import
+[FMUI](https://www.ecofe.me/fmui)
 
